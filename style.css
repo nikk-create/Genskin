@@ -133,6 +133,12 @@ nav ul li a:hover {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .presentation-image {
   text-align: center;
   padding: 60px 20px;
