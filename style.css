@@ -390,3 +390,20 @@ footer {
 .commander-btn.secondary:hover {
   background: linear-gradient(135deg, #FF5252, #FF7043);
 }
+
+@media (max-width: 768px) {
+  .hero {
+    height: 56.25vw; /* ratio 16:9 */
+    max-height: 300px;
+  }
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  overflow-y: auto;
+}
