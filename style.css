@@ -345,7 +345,7 @@ footer {
   gap: 10px;
   font-weight: 600;
   font-size: 0.9rem; /* Légèrement plus petit */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(17, 16, 16, 0.1);
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -389,4 +389,21 @@ footer {
 
 .commander-btn.secondary:hover {
   background: linear-gradient(135deg, #FF5252, #FF7043);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 56.25vw; /* ratio 16:9 */
+    max-height: 300px;
+  }
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  overflow-y: auto;
 }
