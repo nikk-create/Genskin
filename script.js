@@ -1,90 +1,141 @@
-// ✅ Initialisation de Swiper.js
+/* === GENSKIN — Script.js === */
+
+// ✅ PRELOADER
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('hidden');
+    }, 900);
+  }
+});
+
+// ✅ HEADER SCROLL EFFECT
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+// ✅ MOBILE MENU
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileNav = document.getElementById('mobileNav');
+if (mobileMenuBtn && mobileNav) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+  });
+  // Close on nav link click
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+    });
+  });
+}
+
+// ✅ SWIPER.JS
 const swiper = new Swiper(".swiper-container", {
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 3500,
     disableOnInteraction: false,
   },
-  speed: 800,
+  speed: 700,
   slidesPerView: 1,
-  spaceBetween: 20,
+  spaceBetween: 24,
   breakpoints: {
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
+    576: { slidesPerView: 1.5 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
   },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
   navigation: {
-    nextEl: null,
-    prevEl: null,
-  }
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  grabCursor: true,
 });
 
-// ✅ Fonction pour commander via WhatsApp
+// ✅ COMMANDER VIA WHATSAPP
 function commander(produit, numero) {
-  if (!numero) {
-    console.error("Numéro manquant pour la commande WhatsApp.");
-    return;
-  }
-
+  if (!numero) return;
   const message = encodeURIComponent(`Bonjour, je souhaite commander le produit suivant : ${produit}`);
   const url = `https://wa.me/${numero}?text=${message}`;
-
   try {
     window.open(url, "_blank");
   } catch (e) {
-    console.error("Erreur lors de l'ouverture de WhatsApp :", e);
+    console.error("Erreur WhatsApp:", e);
   }
 }
 
-// ✅ Gestion du formulaire de contact
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
+// ✅ FORMULAIRE CONTACT
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
 
-  alert(`Merci ${name}, votre message a été envoyé ! Nous vous répondrons bientôt à ${email}.`);
+    // Feedback visuel
+    const btn = this.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.textContent = '✓ Message envoyé !';
+    btn.style.background = 'linear-gradient(135deg, #3D7A5A, #2A5C41)';
+    btn.disabled = true;
 
-  this.reset();
-});
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3500);
 
-// ✅ Animations au scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
+    this.reset();
+  });
+}
 
-const observer = new IntersectionObserver((entries) => {
+// ✅ SCROLL ANIMATIONS (Intersection Observer)
+const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
+      entry.target.classList.add('visible');
     }
   });
-}, observerOptions);
-
-// Observer les sections pour les animations
-document.querySelectorAll('section').forEach(section => {
-  observer.observe(section);
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -60px 0px'
 });
 
-// Observer les témoignages pour les animations
-document.querySelectorAll('.testimonial').forEach(testimonial => {
-  observer.observe(testimonial);
+document.querySelectorAll('.fade-section').forEach(section => {
+  fadeObserver.observe(section);
 });
 
-// ✅ Smooth scrolling pour les liens de navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
+// ✅ SMOOTH SCROLLING pour tous les liens d'ancrage
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
     const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    targetSection.scrollIntoView({ behavior: 'smooth' });
+    if (targetId === '#') return;
+    const target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      const headerHeight = header ? header.offsetHeight : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
   });
 });
+
+// ✅ PARALLAX LÉGER SUR LE HERO
+const heroVideo = document.querySelector('.background-video');
+if (heroVideo) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    if (scrolled < window.innerHeight) {
+      heroVideo.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+  }, { passive: true });
+}

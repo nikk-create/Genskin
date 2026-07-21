@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genskin - Soins de Peau Naturels et Innovants</title>
-    <meta name="description" content="Découvrez Genskin, vos soins de peau naturels et pharmaceutiques innovants pour une peau saine et éclatante. Produits anti-âge, nettoyants et plus.">
-    <meta name="keywords" content="soins de peau, produits naturels, anti-âge, nettoyant visage, crème solaire, Genskin">
+    <title>Genskin — Soins de Peau Naturels & Innovants</title>
+    <meta name="description" content="Découvrez Genskin, vos soins de peau naturels et pharmaceutiques innovants pour une peau saine et éclatante.">
     <meta property="og:title" content="Genskin - Soins de Peau">
     <meta property="og:description" content="Des soins pharmaceutiques innovants pour votre bien-être cutané.">
     <meta property="og:image" content="images/logo.jpg">
     <meta property="og:url" content="https://genskin.com">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
     <script>
@@ -23,279 +23,495 @@
     </script>
 </head>
 <body>
-    <header>
-        <div class="container">
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-logo">G</div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-inner">
             <div class="brand">
-                <img src="images/logo.jpg" alt="Logo officiel de Genskin, marque de soins de peau naturels" class="logo" loading="lazy">
-                <h1>Genskin</h1>
+                <img src="images/logo.jpg" alt="Logo Genskin" class="logo" loading="lazy">
+                <span class="brand-name">GENSKIN</span>
             </div>
             <nav>
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#produits">Produits</a></li>
                     <li><a href="#apropos">À propos</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#temoignages">Avis</a></li>
+                    <li><a href="#contact" class="nav-cta">Commander</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <!-- Mobile nav -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#temoignages">Avis</a></li>
+                <li><a href="#contact">Commander</a></li>
+            </ul>
         </div>
     </header>
 
+    <!-- HERO -->
     <section id="accueil" class="hero">
         <video autoplay muted loop playsinline class="background-video">
             <source src="vidéo/skincare3.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo HTML5.
         </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-text-box">
-            <h2>La beauté commence par une peau saine</h2>
-            <p>Des soins pharmaceutiques innovants pour votre bien-être cutané.</p>
-            <a href="#produits" class="cta-btn">Découvrez nos produits</a>
+            <p class="hero-eyebrow reveal">Soins Pharmaceutiques Naturels</p>
+            <h2 class="hero-title reveal">La beauté commence<br><em>par une peau saine</em></h2>
+            <p class="hero-sub reveal">Des formules innovantes qui révèlent l'éclat naturel de votre peau.</p>
+            <div class="hero-actions reveal">
+                <a href="#produits" class="btn-primary">Découvrir nos produits</a>
+                <a href="#contact" class="btn-ghost">Nous contacter</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <strong>+11</strong>
+            <span>Produits</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <strong>100%</strong>
+            <span>Naturel</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <strong>+500</strong>
+            <span>Clients satisfaits</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <strong>Fast</strong>
+            <span>Livraison</span>
+        </div>
+    </div>
+
+    <!-- PRÉSENTATION -->
+    <section class="presentation-section fade-section">
+        <div class="pres-text">
+            <span class="section-label">Notre Expertise</span>
+            <h2>Une science au service<br>de votre beauté</h2>
+            <p>Chez Genskin, chaque produit est le fruit d'une recherche rigoureuse alliant la nature et la pharmacologie moderne. Nous sélectionnons les meilleurs ingrédients pour votre peau.</p>
+            <a href="#produits" class="btn-primary">Voir nos produits</a>
+        </div>
+        <div class="pres-image">
+            <div class="image-frame">
+                <img src="images/skinbody.jpg" alt="Soin Genskin" loading="lazy">
+                <div class="image-badge">
+                    <i class="fas fa-leaf"></i>
+                    <span>100% Naturel</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="presentation-image">
-        <div class="container">
-            <h2>Notre expertise pour votre peau</h2>
-            <img src="images/skinbody.jpg" alt="Présentation Genskin">
+    <!-- PRODUITS -->
+    <section id="produits" class="products-section fade-section">
+        <div class="section-header">
+            <span class="section-label">Gamme Complète</span>
+            <h2>Nos Produits</h2>
+            <p>Découvrez notre gamme de soins formulés pour tous types de peau</p>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit1.jpg" alt="GENSKIN Crème Solaire Anti-âge" loading="lazy">
+                        <div class="product-badge">Bestseller</div>
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Crème Solaire Anti-âge</h3>
+                        <p>Protection IR + HEV + UVA + UVB. Résistant à l'eau jusqu'à 8h de protection.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Crème Solaire Anti-âge', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Crème Solaire Anti-âge', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit2.jpg" alt="GENSKIN Crème Intensive Nourrissante" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Crème Intensive Nourrissante</h3>
+                        <p>Prévient le vieillissement prématuré, restaure l'humidité et répare le teint.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Crème Intensive Nourrissante', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Crème Intensive Nourrissante', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit3.jpg" alt="GENSKIN Nettoyant Visage" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Nettoyant Visage</h3>
+                        <p>Révèle l'éclat naturel, élimine l'excès d'huile et prévient l'acné.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Nettoyant Visage', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Nettoyant Visage', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit4.jpg" alt="GENSKIN Gold" loading="lazy">
+                        <div class="product-badge gold">Premium</div>
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Gold</h3>
+                        <p>Renforce les racines des cheveux et soulage les tensions musculaires en massage.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Gold', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Gold', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/pro5.jpg" alt="GENSKIN Tache" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Tache</h3>
+                        <p>Élimine les boutons, les points noirs et purifie en profondeur le visage.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Tache', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Tache', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit6.jpg" alt="GENSKIN Savon Bain Exfoliant" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Savon Bain Exfoliant</h3>
+                        <p>Nourrit, hydrate et protège la peau naturellement au quotidien.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Savon Bain Exfoliant', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Savon Bain Exfoliant', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit7.jpg" alt="GENSKIN Exfoliant Charbon" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Exfoliant au Charbon</h3>
+                        <p>Élimine impuretés, bactéries et acnés. Doux et adapté à tous types de peau.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Exfoliant Soin du visage au charbon', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Exfoliant Soin du visage au charbon', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit8.jpg" alt="GENSKIN Crème de protection" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Crème de Protection</h3>
+                        <p>Prévient le vieillissement prématuré et restaure l'humidité perdue.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Crème de protection', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Crème de protection', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit9.jpg" alt="GENSKIN Savon Charbon" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Savon au Charbon</h3>
+                        <p>Charbon de bois purifiant pour un teint impeccable et une peau nette.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Savon Bain de beauté au Charbon', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Savon Bain de beauté au Charbon', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit10.jpg" alt="GENSKIN Masque Curcuma" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Masque Curcuma & Santal</h3>
+                        <p>Nettoyant naturel, élimine les peaux mortes et rajeunit naturellement.</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Masque de beauté Soin du Visage au Curcuma et bois de Santal', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Masque de beauté Soin du Visage au Curcuma et bois de Santal', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide product">
+                    <div class="product-img-wrap">
+                        <img src="images/produit11.jpg" alt="GENSKIN Poudre" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h3>GENSKIN Poudre</h3>
+                        <p>Poudre efficace contre les boutons de chaleur "Bourbouilles".</p>
+                        <div class="commander-container">
+                            <button class="commander-btn" onclick="commander('GENSKIN Poudre', '2290196452767')">
+                                <i class="fab fa-whatsapp"></i> N°1
+                            </button>
+                            <button class="commander-btn secondary" onclick="commander('GENSKIN Poudre', '2290169191818')">
+                                <i class="fab fa-whatsapp"></i> N°2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </section>
 
-    <section id="produits" class="products-section">
-  <h2>Nos Produits</h2>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-     <div class="swiper-slide product">
-    <img src="images/produit1.jpg" alt="GENSKIN Crème Solaire Anti-âge" loading="lazy">
-    <h3>GENSKIN Crème Solaire Anti-âge</h3>
-    <p>Protection contre IR + HEV + UVA + UVB, Résistant à l'eau jusqu'à 8h de protection.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Crème Solaire Anti-âge', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Crème Solaire Anti-âge', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/produit2.jpg" alt="GENSKIN Crème Intensive Nourrissante" loading="lazy">
-    <h3>GENSKIN Crème Intensive Nourrissante</h3>
-    <p>Préviens le vieillissement prématuré de la peau, Restaure l'humidité de la peau, Hydratation Intensive. Action nourrissante profonde, Répare et améliore le teint.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Crème Intensive Nourrissante', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Crème Intensive Nourrissante', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/produit3.jpg" alt="GENSKIN Nettoyant Visage" loading="lazy">
-    <h3>GENSKIN Nettoyant Visage</h3>
-    <p>Révèle l'éclat naturel, Élimine l'excès d'huile toute la journée, Empêche la récidive de l'acné.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Nettoyant Visage', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Nettoyant Visage', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/produit4.jpg" alt="GENSKIN Gold" loading="lazy">
-    <h3>GENSKIN Gold</h3>
-    <p>Renforce les racines des cheveux, Soulage les tensions musculaires et fatigue en massage.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Gold', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Gold', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/pro5.jpg" alt="GENSKIN Tache" loading="lazy">
-    <h3>GENSKIN Tache</h3>
-    <p>Élimine les boutons, les points noirs et purifie le visage.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Tache', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Tache', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/produit6.jpg" alt="GENSKIN Savon Bain Exfoliant" loading="lazy">
-    <h3>GENSKIN Savon Bain Exfoliant</h3>
-    <p>Nourrit, hydrate et protège la peau naturellement.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Savon Bain Exfoliant', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Savon Bain Exfoliant', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/produit7.jpg" alt="GENSKIN Exfoliant Soin du visage au charbon" loading="lazy">
-    <h3>GENSKIN Exfoliant Soin du visage au charbon</h3>
-    <p>Élimine et combat les impuretés, bactéries et acnés de la peau ; Doux et convient à tous types de peau.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Exfoliant Soin du visage au charbon', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Exfoliant Soin du visage au charbon', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/produit8.jpg" alt="GENSKIN Crème de protection" loading="lazy">
-    <h3>GENSKIN Crème de protection</h3>
-    <p>Prévient le vieillissement prématuré de la peau ; Restaure l'humidité perdue de la peau.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Crème de protection', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Crème de protection', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/produit9.jpg" alt="GENSKIN Savon Bain de beauté au Charbon" loading="lazy">
-    <h3>GENSKIN Savon Bain de beauté au Charbon</h3>
-    <p>Charbon de bois purifiant pour un teint impeccable.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Savon Bain de beauté au Charbon', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Savon Bain de beauté au Charbon', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-
-<div class="swiper-slide product">
-    <img src="images/produit10.jpg" alt="GENSKIN Masque de beauté Soin du Visage au Curcuma et bois de Santal" loading="lazy">
-    <h3>GENSKIN Masque de beauté Soin du Visage au Curcuma et bois de Santal</h3>
-    <p>Nettoyant naturel pour le visage ; Élimine les peaux mortes et rajeunit naturellement.</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Masque de beauté Soin du Visage au Curcuma et bois de Santal', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Masque de beauté Soin du Visage au Curcuma et bois de Santal', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>  
-
-<div class="swiper-slide product">
-    <img src="images/produit11.jpg" alt="GENSKIN Poudre" loading="lazy">
-    <h3>GENSKIN Poudre</h3>
-    <p>Poudre contre les boutons de chaleur "Bourbouilles".</p>
-    <div class="commander-container">
-        <button class="commander-btn" onclick="commander('GENSKIN Poudre', '2290196452767')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 1)
-        </button>
-        <button class="commander-btn secondary" onclick="commander('GENSKIN Poudre', '2290169191818')">
-            <i class="fab fa-whatsapp"></i> Commander (Numéro 2)
-        </button>
-    </div>
-</div>
-  
-</div>
-</section>
-
-    <section id="video-recap">
-        <h2>Récapitulatif de nos produits</h2>
+    <!-- VIDEO RÉCAP -->
+    <section id="video-recap" class="video-section fade-section">
+        <div class="section-header light">
+            <span class="section-label">Notre Gamme</span>
+            <h2>Récapitulatif de nos produits</h2>
+        </div>
         <div class="video-container">
-            <video controls>
+            <video controls poster="images/skinbody.jpg">
                 <source src="vidéo/debrief.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la vidéo HTML5.
             </video>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contactez-Nous</h2>
-        <p>Pour toute question ou commande, contactez-nous via WhatsApp ou remplissez le formulaire ci-dessous.</p>
-        <div class="whatsapp-buttons">
-            <a href="https://wa.me/2290169191818" target="_blank" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> WhatsApp (Numéro 1)
-            </a>
-            <a href="https://wa.me/2290196452767" target="_blank" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> WhatsApp (Numéro 2)
-            </a>
+    <!-- VALEURS -->
+    <section class="values-section fade-section">
+        <div class="section-header">
+            <span class="section-label">Nos Engagements</span>
+            <h2>Pourquoi Genskin ?</h2>
         </div>
-        <form id="contact-form" action="#" method="POST" class="contact-form">
-            <label for="name">Nom complet</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
-            
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
-            
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Votre message" rows="4" required></textarea>
-            
-            <button type="submit" class="commander-btn">Envoyer</button>
-        </form>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                <h3>100% Naturel</h3>
+                <p>Des ingrédients sélectionnés avec soin, issus de la nature et respectueux de votre peau.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-flask"></i></div>
+                <h3>Formules Innovantes</h3>
+                <p>La science moderne alliée aux traditions ancestrales pour des résultats visibles et durables.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Testé & Approuvé</h3>
+                <p>Chaque produit est rigoureusement testé pour garantir sécurité et efficacité maximale.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-heart"></i></div>
+                <h3>Satisfait ou…</h3>
+                <p>La satisfaction de nos clients est notre priorité absolue. Nous sommes toujours disponibles.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="apropos">
-        <h2>À Propos de Genskin</h2>
-        <p>Chez Genskin, nous croyons en la beauté naturelle et en la puissance des ingrédients purs. Notre mission est de vous offrir des soins de la peau efficaces, sûrs et respectueux de l'environnement.</p>
-        <p>Nos produits sont développés avec soin, en combinant la science moderne et les traditions ancestrales pour révéler l'éclat naturel de votre peau.</p>
-        <p>Nous nous engageons à la qualité, à la transparence et à la satisfaction de nos clients.</p>
+    <!-- À PROPOS -->
+    <section id="apropos" class="about-section fade-section">
+        <div class="about-content">
+            <span class="section-label">Notre Histoire</span>
+            <h2>À Propos de Genskin</h2>
+            <p>Chez Genskin, nous croyons en la beauté naturelle et en la puissance des ingrédients purs. Notre mission est de vous offrir des soins de la peau efficaces, sûrs et respectueux de l'environnement.</p>
+            <p>Nos produits sont développés avec soin, en combinant la science moderne et les traditions ancestrales pour révéler l'éclat naturel de votre peau.</p>
+            <p>Nous nous engageons à la qualité, à la transparence et à la satisfaction totale de nos clients.</p>
+            <div class="about-tags">
+                <span><i class="fas fa-check"></i> Qualité Garantie</span>
+                <span><i class="fas fa-check"></i> Ingrédients Purs</span>
+                <span><i class="fas fa-check"></i> Livraison Rapide</span>
+            </div>
+        </div>
+        <div class="about-decoration">
+            <div class="deco-circle c1"></div>
+            <div class="deco-circle c2"></div>
+            <div class="deco-text">G</div>
+        </div>
     </section>
 
-    <section id="temoignages">
-        <h2>Témoignages de nos clients</h2>
-        <div class="testimonials-container">
-            <div class="testimonial">
+    <!-- TÉMOIGNAGES -->
+    <section id="temoignages" class="testimonials-section fade-section">
+        <div class="section-header light">
+            <span class="section-label">Ils Nous Font Confiance</span>
+            <h2>Témoignages</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
                 <p>"Les produits Genskin ont transformé ma peau ! Elle est plus douce et éclatante. Je recommande vivement."</p>
-                <cite>- Carole</cite>
+                <div class="testimonial-author">
+                    <div class="author-avatar">C</div>
+                    <cite>Carole</cite>
+                </div>
             </div>
-            <div class="testimonial">
+            <div class="testimonial-card featured">
+                <div class="stars">★★★★★</div>
                 <p>"Excellente qualité et ingrédients naturels. Le service client est très réactif et professionnel."</p>
-                <cite>- Aude</cite>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <cite>Aude</cite>
+                </div>
             </div>
-            <div class="testimonial">
-                <p>"Service client au top et résultats visibles dès les premières utilisations. Je suis ravie de mes achats."</p>
-                <cite>- Darnel</cite>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Service client au top et résultats visibles dès les premières utilisations. Je suis ravie."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">D</div>
+                    <cite>Darnel</cite>
+                </div>
             </div>
-            <div class="testimonial">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
                 <p>"Des produits efficaces, naturels et respectueux de ma peau sensible. Je ne peux plus m'en passer."</p>
-                <cite>- Nikk</cite>
+                <div class="testimonial-author">
+                    <div class="author-avatar">N</div>
+                    <cite>Nikk</cite>
+                </div>
             </div>
-            <div class="testimonial">
-                <p>"Livraison rapide et emballage soigné. Une expérience d'achat très satisfaisante."</p>
-                <cite>- Beyoncé</cite>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Livraison rapide et emballage soigné. Une expérience d'achat vraiment satisfaisante."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">B</div>
+                    <cite>Beyoncé</cite>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section fade-section">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <span class="section-label light">Parlons-Nous</span>
+                <h2>Contactez-Nous</h2>
+                <p>Pour toute question ou commande, notre équipe est disponible via WhatsApp ou par formulaire.</p>
+                <div class="whatsapp-buttons">
+                    <a href="https://wa.me/2290169191818" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp N°1
+                    </a>
+                    <a href="https://wa.me/2290196452767" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp N°2
+                    </a>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Votre message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Genskin - Tous droits réservés.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-name">GENSKIN</span>
+                <p>Des soins naturels pour une peau éclatante.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#produits">Produits</a>
+                <a href="#apropos">À propos</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://wa.me/2290169191818" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Genskin — Tous droits réservés.</p>
+        </div>
     </footer>
-    
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
